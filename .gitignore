@@ -3,7 +3,7 @@
 /node_modules
 
 #Dockerfile
-Dockerfile
+# Dockerfile
 
 #Ignorar todo el contenido dentro de reporteImage
 reportImage/*
