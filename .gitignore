@@ -10,3 +10,4 @@ reportImage/*
 #No ignorar la carpeta en si
 !reportImage
 
+.DS_Store
