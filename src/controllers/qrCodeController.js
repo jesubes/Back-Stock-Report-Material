@@ -5,8 +5,22 @@ const {Client, LocalAuth} = require('whatsapp-web.js')
 
 let qrCodeImage = null; //fromato base64 
 
+const puppeteerOptions = {
+    args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        // '--disable-dev-shm-usage',
+        // '--disable-accelerated-2d-canvas',
+        // '--no-first-run',
+        // '--no-zygote',
+        // '--single-process', // Importante para evitar múltiples procesos en contenedores Docker
+        // '--disable-gpu'
+    ]
+}
+
 //validar la peticion
 const client = new Client({
+    puppeteer: puppeteerOptions,
     authStrategy: new LocalAuth() //mantener sesion local
 })
 
