@@ -21,7 +21,7 @@ const puppeteerOptions = {
 //validar la peticion
 const client = new Client({
     puppeteer: puppeteerOptions,
-    // authStrategy: new LocalAuth() //mantener sesion local
+    authStrategy: new LocalAuth() //mantener sesion local
 })
 
 client.once('ready', () =>{
