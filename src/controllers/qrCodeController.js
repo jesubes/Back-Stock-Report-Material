@@ -9,7 +9,7 @@ const puppeteerOptions = {
     args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
-        // '--disable-dev-shm-usage',
+        '--disable-dev-shm-usage',
         // '--disable-accelerated-2d-canvas',
         // '--no-first-run',
         // '--no-zygote',
@@ -53,7 +53,9 @@ client.on('qr', async(qr) =>{
 
 
 //inicializar
-client.initialize();
+client.initialize().catch( error => {
+    console.error('Error al inicializar el cliente de WhatsApp:', error)
+});
 
 //Generar el QR
 const qrGenerate = (req, res) => {
